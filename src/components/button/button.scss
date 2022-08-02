@@ -1,0 +1,21 @@
+.button-app {
+  color: #ffff;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #6659e3;
+  width: 120px;
+  height: 40px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+
+  img {
+    width: 30px;
+  }
+}
+
+.button-disabled {
+  background-color: #8c85e8;
+}

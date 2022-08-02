@@ -1,0 +1,51 @@
+.pokemon-app {
+  padding: 12px 45px;
+
+  .title {
+    font-size: 18px;
+    font-weight: bolder;
+    color: #4f4d4d;
+  }
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+
+    &__left {
+      width: 158px;
+      height: 32px;
+      margin-bottom: 10px;
+      border: 1px solid #4f4d4d;
+      border-radius: 2px;
+      position: relative;
+      background-color: #ffffff;
+
+      .icon {
+        width: 10px;
+        height: 15px;
+        position: absolute;
+        top: 9px;
+        left: 8px;
+        min-width: 20px;
+      }
+    }
+
+    .search-input {
+      font-size: 14px;
+      width: 120px;
+      height: 15px;
+      border: none;
+      position: absolute;
+      top: 8px;
+      left: 28px;
+      outline: none;
+    }
+  }
+
+  .middle {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

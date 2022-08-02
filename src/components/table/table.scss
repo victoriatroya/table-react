@@ -1,0 +1,50 @@
+.table-app {
+  background-color: #ffffff;
+
+  &__content {
+    width: 100%;
+    border-collapse: collapse;
+
+    .header {
+      &__item {
+        border: 1px solid #a19797;
+        font-size: 14px;
+        padding: 10px 20px;
+      }
+    }
+
+    .body {
+      &__item {
+        padding: 5px 8px;
+        border: 1px solid #a19797;
+
+        .width-input {
+          width: auto;
+          outline: none;
+        }
+
+        .content {
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+
+          img {
+            width: 20px;
+          }
+        }
+
+        .image {
+          display: flex;
+          margin: 0 auto;
+          width: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 325px) and (max-width: 1024px){
+  .overflow {
+    overflow-y: auto;
+  }
+}
