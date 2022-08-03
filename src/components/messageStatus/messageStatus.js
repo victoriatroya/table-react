@@ -1,13 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import './messageStatus.scss';
+import "./messageStatus.scss";
 
-const MessageStatus = ({ text }) => {
-    return (
-        <div className="text">
-            { text }
-        </div>
-    );
-};
+const MessageStatus = ({ text }) => <div className="text">{text}</div>;
 
 export default MessageStatus;
