@@ -51,7 +51,7 @@ const NewPokemonCard = ({
         </div>
         <div className="right">
           <div className="right__item">
-            <p className="text">Ataque:</p>
+            <p className="text-item">Ataque:</p>
             <RangeComponent
               name="attack"
               value={valueAttack}
@@ -62,7 +62,7 @@ const NewPokemonCard = ({
             />
           </div>
           <div className="right__item">
-            <p className="text">Defensa:</p>
+            <p className="text-item">Defensa:</p>
             <RangeComponent
               name="defense"
               value={valueDefense}
