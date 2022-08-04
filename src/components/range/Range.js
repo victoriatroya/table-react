@@ -2,7 +2,14 @@ import React from "react";
 
 import "./range.scss";
 
-const RangeComponent = ({ minValue, maxValue, value, onChange, name, idInput }) => (
+const RangeComponent = ({
+  minValue,
+  maxValue,
+  value,
+  onChange,
+  name,
+  idInput,
+}) => (
   <div className="range">
     <p className="min-value">0</p>
     <div className="wrapper">
@@ -17,7 +24,6 @@ const RangeComponent = ({ minValue, maxValue, value, onChange, name, idInput }) 
         data-testid={idInput}
         id="rangevalue"
         onChange={onChange}
-        className={`slider ${value > 50 ? "slider-50" : "slider-0"}`}
       />
     </div>
     <p className="max-value">100</p>

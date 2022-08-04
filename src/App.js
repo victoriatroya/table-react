@@ -1,9 +1,7 @@
 import Pokemon from "./pages/pokemon/Pokemon";
 
 function App() {
-  return (
-    <Pokemon />
-  );
+  return <Pokemon />;
 }
 
 export default App;

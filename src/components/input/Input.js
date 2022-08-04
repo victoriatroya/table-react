@@ -9,10 +9,10 @@ const Input = ({
   onChange,
   value,
   classesInput,
-  idTest
+  idTest,
 }) => (
   <input
-    name={name}
+    name={name  || ''}
     value={value}
     type={typeInput}
     placeholder={placeholder}

@@ -49,3 +49,78 @@
     gap: 20px;
   }
 }
+
+@media (max-width: 375px) {
+  .pokemon-app {
+    .top {
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .middle {
+      .new-card-pokemon {
+        &__content {
+          flex-direction: column;
+
+          .left {
+            &__item {
+              flex-direction: column;
+            }
+          }
+          .right {
+            margin-top: 10px;
+
+            &__item {
+              justify-content: start;
+              gap: 20px;
+
+              .range {
+                .value {
+                  font-size: 12px;
+                }
+
+                .min-value {
+                  font-size: 12px;
+                  top: 8px;
+                  left: -10px;
+                }
+
+                .max-value {
+                  font-size: 12px;
+                  top: 8px;
+                  right: -18px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 720px) and (max-width: 768px) {
+  .pokemon-app {
+    .top {
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .middle {
+      .new-card-pokemon {
+        &__content {
+          flex-direction: column;
+
+          .left {
+            &__item {
+              flex-direction: column;
+            }
+          }
+          .right {
+            margin: 10px auto 0 auto;
+            }
+          }
+        }
+      }
+    }
+  }

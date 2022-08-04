@@ -21,7 +21,7 @@ const NewPokemonCard = ({
   handleAddPokemon,
   editRow,
   handleEditPokemon,
-  showCard
+  showCard,
 }) => {
   return (
     <div className="new-card-pokemon" data-testid="new-card-pokemon">
