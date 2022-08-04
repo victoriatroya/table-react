@@ -9,6 +9,7 @@ const Input = ({
   onChange,
   value,
   classesInput,
+  idTest
 }) => (
   <input
     name={name}
@@ -17,6 +18,7 @@ const Input = ({
     placeholder={placeholder}
     onChange={onChange}
     className={`input ${classesInput}`}
+    data-testid={idTest}
   />
 );
 

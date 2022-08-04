@@ -17,25 +17,21 @@ const Pokemon = () => {
   const [dataTable, setDataTable] = useState();
   const [searchInput, setSearchInput] = useState();
 
-  useEffect(() => {
-    const tableData = async () => {
-      await getPokemonData(1);
-    };
-
-    tableData();
+  useEffect( () => {
+     getPokemonData(1);
   }, []);
 
   const getPokemonData = async (id) => {
     try {
       const response = await getDataPokemons(id);
       return setDataTable(response);
-    } catch {
-      console.log("error");
+    } catch(e) {
+      console.log("error", e);
     }
   };
 
   return (
-    <div className="pokemon-app">
+    <div className="pokemon-app" data-testid="pokemon-app">
       <h1 className="title">Listado de Pokemon</h1>
       <div className="top">
         <div className="top__left">
@@ -48,6 +44,8 @@ const Pokemon = () => {
             name="searchInput"
             placeholder="Buscar"
             classesInput="search-input"
+            idTest="input-search"
+            typeInput="text"
           />
         </div>
         <div className="top__right">

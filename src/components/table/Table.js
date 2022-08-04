@@ -40,29 +40,20 @@ const Table = ({
     });
   };
 
-  const deleteRowPokemon = async (id) => {
-    try {
-      const response = await deletePokemon(id);
-      return setData(response);
-    } catch {
-      console.log("error");
-    }
-  };
-
   const addNewPokemon = async (data) => {
     try {
       const response = await addPokemon(1, data);
       return setData(response);
-    } catch {
-      console.log("error");
+    } catch (e) {
+      console.log("error", e);
     }
   };
 
   const updateDataPokemon = async (id, data) => {
     try {
       await updatePokemon(id, data);
-    } catch {
-      console.log("error");
+    } catch(e) {
+      console.log("error", e);
     }
   };
 
@@ -107,11 +98,14 @@ const Table = ({
   };
 
   const deleteRow = async (id) => {
-    const idToDelete = data
-      ?.filter((item) => item.id === id)
-      ?.map((item) => item.id);
-    await deleteRowPokemon(idToDelete);
-    await getDataPokemon(1);
+    const newData = data.filter((item) => item.id !== id)
+
+    try {
+      await deletePokemon(id);
+      setData(newData)
+    } catch (e) {
+      console.log(e)
+    }
   };
 
   const showInformationPokemon = (id) => {
@@ -154,20 +148,20 @@ const Table = ({
     <>
       <div className="table-app">
         <div className="overflow">
-          <table className="table-app__content">
+          <table className="table-app__content" data-testid="pokemon-table">
             <thead>
               <tr className="header">
-                <th className="header__item">Nombre</th>
-                <th className="header__item">Imagen</th>
-                <th className="header__item">Ataque</th>
-                <th className="header__item">Defensa</th>
-                <th className="header__item">Acciones</th>
+                <th className="header__item" scope="col">Nombre</th>
+                <th className="header__item" scope="col">Imagen</th>
+                <th className="header__item" scope="col">Ataque</th>
+                <th className="header__item" scope="col">Defensa</th>
+                <th className="header__item" scope="col">Acciones</th>
               </tr>
             </thead>
             <tbody>
               {data?.length > 0 &&
                 filterDataTable(data)?.map((item, index) => (
-                  <tr className="body" key={`row-${index}`}>
+                  <tr className="body" key={`row-${index}`}  data-testid="item">
                     <td className="body__item">{item.name}</td>
                     <td className="body__item">
                       <img src={item.image} className="image" alt="image" />
@@ -184,6 +178,7 @@ const Table = ({
                         <img
                           src={TrashIcon}
                           alt="trash"
+                          data-testid="trash-button"
                           onClick={() => deleteRow(item.id)}
                         />
                       </div>
@@ -207,6 +202,7 @@ const Table = ({
           handleAddPokemon={handleNewPokemon}
           handleEditPokemon={handleEditPokemon}
           editRow={editData}
+          showCard={setShowNewCard}
         />
       )}
     </>

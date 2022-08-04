@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = 'https://bp-pokemons.herokuapp.com/';
+export const URL = 'https://bp-pokemons.herokuapp.com';
 
 export const getDataPokemons = (idAuthor) => new Promise((resolve, reject) => {
     axios.get(`${URL}?idAuthor=${idAuthor}`)
@@ -9,7 +9,7 @@ export const getDataPokemons = (idAuthor) => new Promise((resolve, reject) => {
 });
 
 export const deletePokemon = (id) => new Promise((resolve, reject) => {
-    axios.delete(`${URL}${id}`)
+    axios.delete(`${URL}/${id}`)
         .then((response) => resolve(response.data))
         .catch((error) => reject(error));
 });
@@ -21,7 +21,7 @@ export const addPokemon = (idAuthor, data) => new Promise((resolve, reject) => {
 });
 
 export const updatePokemon = (id, data) => new Promise((resolve, reject) => {
-    axios.put(`${URL}${id}`, data)
+    axios.put(`${URL}/${id}`, data)
         .then((response) => resolve(response.data))
         .catch((error) => reject(error));
 });

@@ -21,19 +21,21 @@ const NewPokemonCard = ({
   handleAddPokemon,
   editRow,
   handleEditPokemon,
+  showCard
 }) => {
   return (
-    <div className="new-card-pokemon">
+    <div className="new-card-pokemon" data-testid="new-card-pokemon">
       <p className="title-card">Nuevo Pokemon</p>
       <div className="new-card-pokemon__content">
         <div className="left">
           <div className="left__item">
-            <p>Nombre:</p>
+            <p data-testid="text-name">Nombre:</p>
             <Input
               name="name"
               value={inputName}
               onChange={(value) => setInputName(value)}
               classesInput="input-card"
+              idTest="name-input"
             />
           </div>
           <div className="left__item">
@@ -43,6 +45,7 @@ const NewPokemonCard = ({
               value={inputImage}
               onChange={(value) => setInputImage(value)}
               classesInput="input-card"
+              idTest="image-input"
             />
           </div>
         </div>
@@ -55,6 +58,7 @@ const NewPokemonCard = ({
               onChange={onChangeAttack}
               minValue={0}
               maxValue={100}
+              idInput="attack-range"
             />
           </div>
           <div className="right__item">
@@ -65,6 +69,7 @@ const NewPokemonCard = ({
               onChange={onChangeDefense}
               minValue={0}
               maxValue={100}
+              idInput="defense-range"
             />
           </div>
         </div>
@@ -79,12 +84,14 @@ const NewPokemonCard = ({
             editRow && handleEditPokemon();
           }}
           buttonDisabled={!inputImage || !inputName}
+          idButton="button-save"
         />
         <Button
           name="Cancelar"
           iconLeft
           image={CancelIcon}
-          onClick={() => {}}
+          onClick={() => showCard(false)}
+          idButton="button-save"
         />
       </div>
     </div>

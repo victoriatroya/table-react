@@ -9,6 +9,7 @@ const Button = ({
   image,
   classButton,
   buttonDisabled,
+  idButton,
 }) => (
   <button
     onClick={onClick}
@@ -16,6 +17,7 @@ const Button = ({
       buttonDisabled && "button-disabled"
     }`}
     disabled={buttonDisabled}
+    data-testid={idButton}
   >
     {iconLeft && <img src={image} alt="" />}
     {name}
